@@ -1,5 +1,9 @@
 module.exports = (x) => {
-  console.log(x);
+
+  if(!x.length){
+    new Error('empty string passed in');
+  }
+
   let alph = 'abcdefghijklmnopqrstuvwxyz';
   //split the words
   let wordsArr = x.split(' ');

@@ -10,3 +10,15 @@ describe('when an string of words are passed in', () => {
     expect(high('take me to semynak')).toEqual('semynak');
   });
 });
+
+
+describe('when an empty string is passed in', () => {
+  it('it should throw an error', () => {
+    try{
+      high('');
+    }
+    catch(err){
+      expect(err).toEqual(new Error('empty string passed in'));
+    }
+  });
+});
