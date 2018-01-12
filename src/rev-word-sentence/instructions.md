@@ -1,0 +1,1 @@
+Given a string of sentences of N, reverse the letters of each word in the string while keeping the order of the words. Punctuations will stay connected with the word. Each word is separated by a space.
