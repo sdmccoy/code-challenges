@@ -7,6 +7,24 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+//FOR LOOP with double variables
+//best time and space complexity
+function palindrome(str) {
+    //loop through str from the back traversing to front - i
+    //loop through str from the front traversing to back - k
+    //declare a stop length depending on odd or even str
+    //only interate through half of the string for time complexity
+    let stopLength = str.length % 2 === 0 ? str.length/2 : Math.floor(str.length/2); 
+    
+    //compare both through each iteration, if any !== then return false 
+    for(i = str.length-1, k = 0; k <= stopLength; i--, k++)
+        if(str[k] !== str[i]) return false;    
+    return true;
+}
 
+//REVERSED string helper method
+// function palindrome(str){
+//     let reversed = str.split('').reverse().join('');
+//     return reversed === str ? true : false;
+// }
 module.exports = palindrome;
