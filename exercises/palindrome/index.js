@@ -17,9 +17,10 @@ function palindrome(str) {
     let stopLength = str.length % 2 === 0 ? str.length/2 : Math.floor(str.length/2); 
     
     //compare both through each iteration, if any !== then return false 
-    for(i = str.length-1, k = 0; k <= stopLength; i--, k++)
+    for(i = str.length-1, k = 0; k <= stopLength; i--, k++){
         if(str[k] !== str[i]) return false;    
     return true;
+    }
 }
 
 //REVERSED string helper method
