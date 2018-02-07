@@ -25,7 +25,7 @@
 
 //SOLUTION with for loop, and manipulating string
 function capitalize(str){
-    //loop through string, find characters with a space to the left, cap it
+    // loop through string, find characters with a space to the left, cap it
     let result = '';
     for(let i = 0; i < str.length; i++){
         
@@ -38,5 +38,16 @@ function capitalize(str){
     
     return result;
 }
+
+//SOLUTION using split, splice, and join helper methods
+// function capitalize(str){
+//     //loop through string, find characters with a space to the left, cap it
+//     let result = [];
+//     for(let word of str.split(' ')){
+//         word[0].toUpperCase() + word.splice(1);
+//     }
+    
+//     return result.join(' ');
+// }
 
 module.exports = capitalize;
