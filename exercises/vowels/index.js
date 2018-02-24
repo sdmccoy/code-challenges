@@ -7,6 +7,17 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-function vowels(str) {}
+//SOLUTION using for loop and hard code elements in a conditional
+function vowels(str) {
+  //declare variable to return
+  let numOfVowels = 0;
+  //loop through str and use conditional to add
+  for (let element of str.toLowerCase()) {
+    if (element === 'a' || element === 'e' || element === 'i' || element === 'o' || element === 'u') {
+      numOfVowels += 1;
+    }
+  }
+  return numOfVowels;
+}
 
 module.exports = vowels;
