@@ -32,6 +32,8 @@
 // }
 
 // SOLUTION with recursion
+// BIG O(n^2) is exponential, or nearly. It's a dramatic increase of function calls the more    you increase n.
+// to reduce the runtime, you can use memoization = store the arguments of each function call   along with the result. If the function is called with the argument, just return that result   instead of computing the function call again.
 function fib(n) {
   if (n < 2) {
     return n;
@@ -40,4 +42,22 @@ function fib(n) {
   return fib(n - 1) + fib(n - 2);
 }
 
+// building a helper function to speed up the time - memoization
+function memoizer(cb){
+  // store the calls of the slow function
+  const cache = {};
+
+  // returning the faster function
+  return function(...args) {
+    if (cache[args]){
+      return cache[args];
+    }
+    const result = cb.apply(this, args);
+    cache[args] = result;
+
+    return result;
+  };
+}
+// reassigning the function to be able to export it.
+fib = memoizer(fib);
 module.exports = fib;
