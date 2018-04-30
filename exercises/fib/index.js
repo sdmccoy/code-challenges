@@ -34,12 +34,12 @@
 // SOLUTION with recursion
 // BIG O(n^2) is exponential, or nearly. It's a dramatic increase of function calls the more    you increase n.
 // to reduce the runtime, you can use memoization = store the arguments of each function call   along with the result. If the function is called with the argument, just return that result   instead of computing the function call again.
-function fib(n) {
+function fibSlow(n) {
   if (n < 2) {
     return n;
   }
   // if n is 5, it will call fib with 4 and 3. 4 will then break down to 3 and 2 fib calls, until you get down to 1 and 0 calls and then you add up the 1s as the solution.
-  return fib(n - 1) + fib(n - 2);
+  return fibSlow(n - 1) + fibSlow(n - 2);
 }
 
 // building a helper function to speed up the time - memoization
@@ -59,5 +59,5 @@ function memoizer(cb){
   };
 }
 // reassigning the function to be able to export it.
-fib = memoizer(fib);
+let fib = memoizer(fibSlow);
 module.exports = fib;
